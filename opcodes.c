@@ -35,6 +35,8 @@ void pall(stack_t **node,  __attribute__((unused))unsigned int value)
 {
 	stack_t *tmp;
 
+	if (!node)
+		exit(EXIT_FAILURE);
 	tmp = *node;
 	while (tmp)
 	{
