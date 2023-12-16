@@ -79,8 +79,13 @@ void get_function(char *opcode, char *value, int line_nbr)
 	for (i = 0; func_list[i].opcode; i++)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
+		{
 			call_f(func_list[i].f, opcode, value, line_nbr);
+			break;
+		}
 	}
+	if (!func_list[i].opcode)
+		err_handler(3, line_nbr, opcode);
 }
 
 /**
