@@ -25,8 +25,8 @@ void openFile(const char *filename)
 
 void readFile(FILE *fd)
 {
-	char *lineptr;
-	size_t n;
+	char *lineptr = NULL;
+	size_t n = 0;
 	int line_nbr = 1;
 
 	while (getline(&lineptr, &n, fd) != -1)
