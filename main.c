@@ -17,5 +17,6 @@ int main(int argc, char **argv)
 		err_handler(1);
 
 	openFile(argv[1]);
+	free_nodes();
 	return (0);
 }
