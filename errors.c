@@ -43,7 +43,6 @@ void err_handler(int err_code, ...)
 			break;
 	}
 
-	va_end(args);
 	free_nodes();
 	exit(EXIT_FAILURE);
 }
