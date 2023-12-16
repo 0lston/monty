@@ -17,7 +17,8 @@ void push(stack_t **node, __attribute__((unused))unsigned int value)
 		head = *node;
 		return;
 	}
-
+	if (!node)
+		exit(EXIT_FAILURE);
 	tmp = head;
 	head = *node;
 	head->next = tmp;
