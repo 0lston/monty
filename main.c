@@ -1,5 +1,6 @@
 #include "monty.h"
 
+stack_t *head = NULL;
 /**
  * main - Entry point for the Monty interpreter.
  *
@@ -11,7 +12,6 @@
 
 int main(int argc, char **argv)
 {
-	stack_t *head = NULL;
 
 	if (argc != 2)
 		err_handler(1);

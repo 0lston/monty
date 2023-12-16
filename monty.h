@@ -18,9 +18,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 extern stack_t *head;
@@ -35,8 +35,8 @@ extern stack_t *head;
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
@@ -54,11 +54,11 @@ void free_nodes(void);
 /*error printing*/
 void err_handler(int err_code, ...);
 /*opcodes*/
-void push(stack_t **node,  __attribute__((unused))unsigned int value );
+void push(stack_t **node,  __attribute__((unused))unsigned int value);
 void pall(stack_t **node,  __attribute__((unused))unsigned int value);
 
 /* file handling*/
-void openFile(const char* filename);
+void openFile(const char *filename);
 void readFile(FILE *fd);
 void parse_line(char *lineptr, int line_nbr);
 void get_function(char *opcode, char *value, int line_nbr);

@@ -29,9 +29,10 @@ void readFile(FILE *fd)
 	size_t n;
 	int line_nbr = 1;
 
-	for (; getline(&lineptr, &n, fd) != -1; line_nbr++)
+	while (getline(&lineptr, &n, fd) != -1)
 	{
 		parse_line(lineptr, line_nbr);
+		line_nbr++;
 	}
 	free(lineptr);
 }
