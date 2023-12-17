@@ -40,7 +40,7 @@ void pop(stack_t **node, unsigned int line_nbr)
 	stack_t *tmp;
 
 	if (node == NULL || *node == NULL)
-		err_handler(8, line_nbr);
+		err_handler(7, line_nbr);
 
 	tmp = *node;
 	*node = (*node)->next;
@@ -66,7 +66,7 @@ void swap(stack_t **node, unsigned int line_nbr)
 	stack_t *first, *second;
 
 	if (node == NULL || *node == NULL || (*node)->next == NULL)
-		err_handler_2(9, line_nbr);
+		err_handler_2(8, line_nbr);
 
 	first = *node;
 	second = first->next;
@@ -103,12 +103,10 @@ void rotl(stack_t **node, unsigned int line_nbr)
 
 	stack_t *tmp, *second;
 
-	if (node == NULL || *node == NULL)
-		err_handler(6, line_nbr);
-	tmp = *node;
-	if (tmp->next == NULL)
+	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		return;
 
+	tmp = *node;
 	while (tmp->next)
 		tmp = tmp->next;
 
@@ -135,13 +133,10 @@ void rotr(stack_t **node, unsigned int line_nbr)
 {
 	stack_t *tmp;
 
-	if (node == NULL || *node == NULL)
-		err_handler(6, line_nbr);
-
-	tmp = *node;
-	if (tmp->next == NULL)
+	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		return;
 
+	tmp = *node;
 	while (tmp->next)
 		tmp = tmp->next;
 
