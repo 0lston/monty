@@ -11,7 +11,7 @@ void pall(stack_t **node,  __attribute__((unused))unsigned int line_nbr)
 {
 	stack_t *tmp;
 
-	if (!node)
+	if (node == NULL || *node == NULL)
 		exit(EXIT_FAILURE);
 	tmp = *node;
 	while (tmp)

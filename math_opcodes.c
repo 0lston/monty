@@ -93,7 +93,7 @@ void _div(stack_t **node, unsigned int line_nbr)
 	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		err_handler_2(13, line_nbr);
 	if ((*node)->n == 0)
-		err_handler(15, line_nbr);
+		err_handler_2(15, line_nbr);
 
 	tmp = (*node)->next;
 
@@ -121,7 +121,7 @@ void _mod(stack_t **node, unsigned int line_nbr)
 		err_handler_2(14, line_nbr);
 
 	if ((*node)->n == 0)
-		err_handler(15, line_nbr);
+		err_handler_2(15, line_nbr);
 
 	tmp = (*node)->next;
 

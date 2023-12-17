@@ -101,10 +101,11 @@ void swap(stack_t **node, unsigned int line_nbr)
 void rotl(stack_t **node, unsigned int line_nbr)
 {
 
-	stack_t *tmp = *node, *second;
+	stack_t *tmp, *second;
 
-	if (tmp == NULL)
+	if (node == NULL || *node == NULL)
 		err_handler(6, line_nbr);
+	tmp = *node;
 	if (tmp->next == NULL)
 		return;
 
@@ -132,10 +133,12 @@ void rotl(stack_t **node, unsigned int line_nbr)
 
 void rotr(stack_t **node, unsigned int line_nbr)
 {
-	stack_t *tmp = *node;
+	stack_t *tmp;
 
-	if (tmp == NULL)
+	if (node == NULL || *node == NULL)
 		err_handler(6, line_nbr);
+
+	tmp = *node;
 	if (tmp->next == NULL)
 		return;
 
