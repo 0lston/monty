@@ -12,7 +12,8 @@ void push(stack_t **node, __attribute__((unused))unsigned int line_nbr)
 {
 	stack_t *tmp;
 
-	if (!head)
+
+	if (head == NULL)
 	{
 		head = *node;
 		return;
