@@ -70,8 +70,8 @@ void _div(stack_t **node, unsigned int line_nbr);
 void _mod(stack_t **node, unsigned int line_nbr);
 void pchar(stack_t **node, unsigned int line_nbr);
 void pstr(stack_t **node, __attribute__((unused))unsigned int line_nbr);
-void rotl(stack_t **node, unsigned int line_nbr);
-void rotr(stack_t **node, unsigned int line_nbr);
+void rotl(stack_t **node, __attribute__((unused))unsigned int line_nbr);
+void rotr(stack_t **node, __attribute__((unused))unsigned int line_nbr);
 void enqueue(stack_t **node, __attribute__((unused))unsigned int line_nbr);
 
 /* file handling*/

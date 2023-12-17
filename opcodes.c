@@ -98,7 +98,7 @@ void swap(stack_t **node, unsigned int line_nbr)
  * and the second top element the first one.
  */
 
-void rotl(stack_t **node, unsigned int line_nbr)
+void rotl(stack_t **node, __attribute__((unused))unsigned int line_nbr)
 {
 
 	stack_t *tmp, *second;
@@ -129,7 +129,7 @@ void rotl(stack_t **node, unsigned int line_nbr)
  * and adjusting the other pointers accordingly.
  */
 
-void rotr(stack_t **node, unsigned int line_nbr)
+void rotr(stack_t **node, __attribute__((unused))unsigned int line_nbr)
 {
 	stack_t *tmp;
 
