@@ -65,7 +65,7 @@ void swap(stack_t **node, unsigned int line_nbr)
 {
 	stack_t *first, *second;
 
-	if (*node == NULL || (*node)->next == NULL)
+	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		err_handler_2(9, line_nbr);
 
 	first = *node;

@@ -65,7 +65,7 @@ void _mul(stack_t **node, unsigned int line_nbr)
 {
 	stack_t *tmp;
 
-	if (*node == NULL || (*node)->next == NULL)
+	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		err_handler_2(12, line_nbr);
 
 	tmp = (*node)->next;
@@ -90,7 +90,7 @@ void _div(stack_t **node, unsigned int line_nbr)
 {
 	stack_t *tmp;
 
-	if (*node == NULL || (*node)->next == NULL)
+	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		err_handler_2(13, line_nbr);
 	if ((*node)->n == 0)
 		err_handler(15, line_nbr);
@@ -117,7 +117,7 @@ void _mod(stack_t **node, unsigned int line_nbr)
 {
 	stack_t *tmp;
 
-	if (*node == NULL || (*node)->next == NULL)
+	if (node == NULL || *node == NULL || (*node)->next == NULL)
 		err_handler_2(14, line_nbr);
 
 	if ((*node)->n == 0)

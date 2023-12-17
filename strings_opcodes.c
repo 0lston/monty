@@ -33,7 +33,7 @@ void pall(stack_t **node,  __attribute__((unused))unsigned int line_nbr)
 
 void pint(stack_t **node, unsigned int line_nbr)
 {
-	if (!node)
+	if (node == NULL || *node == NULL)
 		err_handler(7, line_nbr);
 
 	printf("%d\n", (*node)->n);
@@ -67,7 +67,7 @@ void nop(stack_t **node, unsigned int line_nbr)
 
 void pchar(stack_t **node, unsigned int line_nbr)
 {
-	if (node == NULL)
+	if (node == NULL || *node == NULL)
 		err_handler_2(16, line_nbr);
 	if (!is_ascii((*node)->n))
 		err_handler_2(17, line_nbr);
