@@ -46,6 +46,7 @@ typedef void (*func)(stack_t **, unsigned int);
 
 /* helppers */
 int is_number(char *str);
+int is_ascii(int c);
 
 /* lists */
 stack_t *create_node(int value);
@@ -53,14 +54,31 @@ void free_nodes(void);
 
 /*error printing*/
 void err_handler(int err_code, ...);
-/*opcodes*/
-void push(stack_t **node,  __attribute__((unused))unsigned int value);
-void pall(stack_t **node,  __attribute__((unused))unsigned int value);
+void err_handler_2(int err_code, ...);
+
+/* opcodes*/
+void push(stack_t **node,  __attribute__((unused))unsigned int line_nbr);
+void pall(stack_t **node,  __attribute__((unused))unsigned int line_nbr);
+void pint(stack_t **node,  unsigned int line_nbr);
+void pop(stack_t **node, unsigned int line_nbr);
+void swap(stack_t **node, unsigned int line_nbr);
+void nop(stack_t **node, unsigned int line_nbr);
+void _add(stack_t **node, unsigned int line_nbr);
+void _sub(stack_t **node, unsigned int line_nbr);
+void _mul(stack_t **node, unsigned int line_nbr);
+void _div(stack_t **node, unsigned int line_nbr);
+void _mod(stack_t **node, unsigned int line_nbr);
+void pchar(stack_t **node, unsigned int line_nbr);
+void pstr(stack_t **node, __attribute__((unused))unsigned int line_nbr);
+void rotl(stack_t **node, unsigned int line_nbr);
+void rotr(stack_t **node, unsigned int line_nbr);
+void enqueue(stack_t **node, __attribute__((unused))unsigned int line_nbr);
 
 /* file handling*/
 void openFile(const char *filename);
 void readFile(FILE *fd);
-void parse_line(char *lineptr, int line_nbr);
-void get_function(char *opcode, char *value, int line_nbr);
-void call_f(func op_func, char *op, char *value, int line_nbr);
+void parse_line(char *lineptr, int line_nbr, int *format);
+void get_function(char *opcode, char *value, int line_nbr, int *format);
+void call_f(func op_func, char *op, char *value, int line_nbr, int *format);
+
 #endif

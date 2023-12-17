@@ -19,3 +19,18 @@ int is_number(char *str)
 			return (0);
 	return (1);
 }
+
+/**
+ * is_ascii - Checks if a given integer is within the ASCII range.
+ *
+ * @c: The integer to be checked.
+ *
+ * Return:
+ *   1 if the integer is within the ASCII range (0 to 127), and 0 otherwise.
+ */
+int is_ascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}
