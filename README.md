@@ -55,25 +55,49 @@ To Run the program:
  ./monty bytecode_file
 ```
 
-Available Operation Codes:
+The bytecodes that can be interpreted by the program are the following:
 
-| Opcode | Description |
-|---------------- | -----------|
-|push   | Pushes an element to the stack. e.g (push 1 # pushes 1 into the stack)|
-|pall   | Prints all the values on the stack, starting from the to of the stack.|
-|pint   | Prints the value at the top of the stack.|
-|pop    | Removes the to element of the stack. |
-|swap   | Swaps the top to elements of the stack.|
-|add    | Adds the top two elements of the stack. The result is then stored in the second node, and the first node is removed.|
-|nop    | This opcode does not do anything.|
-|sub    | Subtracts the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
-|div    | Divides the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
-|mul | Multiplies the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
-|mod    | Computes the remainder of the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
-|#      | When the first non-space of a line is a # the line will be trated as a comment.|
-|pchar  | Prints the integer stored in the top of the stack as its ascii value representation.|
-|pstr   | Prints the integers stored in the stack as their ascii value representation. It stops printing when the value is 0, when the stack is over and when the value of the element is a non-ascii value.|
-|rotl   | Rotates the top of the stack to the bottom of the stack.|
-|rotr   | Rotates the bottom of the stack to the top of the stack.|
-|stack  | This is the default behavior. Sets the format of the data into a stack (LIFO).|
-|queue  | Sets the format of the data into a queue (FIFO).|
+
+|Bytecode| Function |
+|--|--|
+| push | Pushes an element to the stack (Requires an integer argument)|
+| pall | Prints all the values on the stack, starting from the top of the stack |
+| pint | Prints the value at the top of the stack, followed by a new line |
+| pop | Removes the top element of the stack |
+| swap | Swaps the top two elements of the stack |
+| add | Adds the top two elements of the stack |
+| nop | Doesn’t do anything |
+| sub | Subtracts the top element of the stack from the second top element of the stack |
+| div | Divides the second top element of the stack by the top element of the stack. |
+| mul | Multiplies the second top element of the stack with the top element of the stack |
+| mod | Computes the rest of the division of the second top element of the stack by the top element of the stack |
+| pchar | Prints the char at the top of the stack, followed by a new line |
+| pstr | Prints the string starting at the top of the stack, followed by a new line |
+| rotl | Rotates the stack to the top |
+| rotr | Rotates the stack to the bottom |
+| stack | Sets the format of the data to a stack (LIFO). This is the default behavior of the program |
+| queue | sets the format of the data to a queue (FIFO) |
+
+
+**Comments:**
+
+Besides the bytecodes interpreted, the program allows for commentary in the monty files.
+
+For this when the first non-space character of a line is `#`, the line won't be taken into account in execution.
+
+
+```
+Example:
+
+Olston@ubuntu:~/monty$ cat -e bytecodes/00.m
+push 1$
+push 2$
+#Comment$
+push 3$
+pall$
+Olston@ubuntu:~/monty$ ./monty bytecodes/00.m
+3
+2
+1
+Olston@ubuntu:~/monty$
+```
